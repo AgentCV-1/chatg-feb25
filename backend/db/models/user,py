@@ -1,0 +1,8 @@
+from pydantic import BaseModel, EmailStr
+from backend.db.connection import db
+
+
+class UserModel(BaseModel):
+    username: str
+    email: EmailStr
+    password: str  # This will be stored as a **hashed** password

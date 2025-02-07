@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from models.user import UserModel
-from db.connection import db
-from services.auth_service import hash_password, verify_password, create_jwt_token
+from backend.db.models.user import UserModel  
+from backend.db.connection import db  
+from backend.services.auth_service import hash_password, verify_password, create_jwt_token  # ✅ Fixed import
 
 auth_router = APIRouter()
 user_collection = db["users"]
