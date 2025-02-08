@@ -2,18 +2,18 @@ from pymongo import MongoClient
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
+# ✅ Load environment variables
 load_dotenv()
 
-# Get MongoDB URI from .env file
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+# ✅ Get MongoDB URI from .env file (fallback to local MongoDB if not found)
+DATABASE_URL = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
 
-# Connect to MongoDB
-client = MongoClient(MONGO_URI)
+# ✅ Connect to MongoDB
+client = MongoClient(DATABASE_URL)
 
-# Define the database
-db = client["cv_database"]
+# ✅ Define the database
+db = client["cv_database"]  # Replace with actual database name
 
-# Collections (Tables in SQL terms)
+# ✅ Define collections (equivalent to tables in SQL)
 users_collection = db["users"]
 cvs_collection = db["cvs"]
