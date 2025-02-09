@@ -6,15 +6,12 @@ cv_router = APIRouter()
 
 @cv_router.post("/cv/", response_model=CVModel)
 def create_cv_route(cv: CVModel):
-    """Create a new CV in the database"""
-    return create_cv(cv.dict())
+    return create_cv(cv.model_dump())
 
 @cv_router.get("/cv/{cv_id}", response_model=CVModel)
 def get_cv_route(cv_id: str):
-    """Retrieve a CV by ID"""
     return get_cv_by_id(cv_id)
 
 @cv_router.delete("/cv/{cv_id}")
 def delete_cv_route(cv_id: str):
-    """Delete a CV by ID"""
     return delete_cv(cv_id)

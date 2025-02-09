@@ -12,8 +12,8 @@ DATABASE_URL = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
 client = MongoClient(DATABASE_URL)
 
 # ✅ Define the database
-db = client["cv_database"]  # Replace with actual database name
+db = client["cv_database"]  # Ensure this matches your database name
 
 # ✅ Define collections (equivalent to tables in SQL)
 users_collection = db["users"]
-cvs_collection = db["cvs"]
+cvs_collection = db["cvs"]  # ✅ Ensure this line exists
