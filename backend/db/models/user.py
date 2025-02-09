@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr
 
-class UserModel(BaseModel):  # ✅ Keep as `UserModel`
+class UserModel(BaseModel):
     username: str
     email: EmailStr
-    password: str  # This should be stored as a hashed password
+    password: str  # Stored as a **hashed** password
